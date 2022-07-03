@@ -7,12 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import {
-  Button,
-  IconButton,
-  TextareaAutosize,
-  Typography,
-} from '@mui/material';
+import { Button, IconButton, TextareaAutosize } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import Switch from '@mui/material/Switch';
 import { AddCircleOutline } from '@mui/icons-material';
@@ -38,7 +33,6 @@ function Form() {
   // Add new option label
   const optionAdd = (e) => {
     setAnswer(e.target.value);
-    // console.log(answer, 'cek answer');
   };
 
   // Add new card
@@ -50,23 +44,24 @@ function Form() {
       answerDropdown: question,
       required: false,
     };
-    setForm([{ ...form }, card]);
+    setForm([ ...form , card]);
     console.log(form);
   };
 
-// Add new option in Dropdown 
+  // Add new option in Dropdown
   const addOption = (e) => {
     let option = answer;
     setQuestion([...question, option]);
     setForm(() => ({ ...form, question }));
     console.log(question);
   };
-  
-// Change question type Dropdown/Type
+
+  // Change question type Dropdown/Type
   const changeType = (e) => {
     setInput(e.target.value);
   };
 
+  // Submit form
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
@@ -77,7 +72,7 @@ function Form() {
     <form onSubmit={handleSubmit}>
       <Box
         component="form"
-        sx={{ bgcolor: 'white', padding: '30px', marginY: '30px' }}
+        sx={{ bgcolor: 'white', padding: '30px', margin: '30px' }}
       >
         <FormControl fullWidth>
           <Stack spacing={5}>
@@ -105,7 +100,7 @@ function Form() {
           return (
             <Box
               component="form"
-              sx={{ bgcolor: 'white', padding: '30px' }}
+              sx={{ bgcolor: 'white', padding: '30px', margin: '30px' }}
               key={index}
             >
               <Stack spacing={5}>
@@ -333,7 +328,7 @@ function Form() {
           backgroundColor: '#21b6ae',
           padding: '10px 30px',
           fontSize: '18px',
-          marginTop: '20px',
+          margin: '30px',
         }}
         variant="contained"
         type="submit"
