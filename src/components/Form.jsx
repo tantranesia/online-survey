@@ -71,6 +71,7 @@ function Form() {
   // Submit form
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem(form, 'form')
     console.log(form);
     console.log(question);
   };
